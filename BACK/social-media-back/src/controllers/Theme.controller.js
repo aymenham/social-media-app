@@ -12,9 +12,9 @@ exports.getTheme =  (req, res) => {
  
 };
 
-exports.createTheme =  (req, res) => {
+exports.createTheme =  async (req, res) => {
 
-  createModal(Theme , req , res)
+    createModal(Theme, req, res);
  
 };
 
