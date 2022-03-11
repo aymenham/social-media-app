@@ -10,6 +10,14 @@ hashPassword: async (password, saltRounds ) => {
     return null
   }
 
+} , 
+
+checkPassword : async (passwordUser , password )=>{
+
+  const isMatch = await bcrypt.compare(passwordUser , password)
+  console.log(isMatch);
+  return isMatch
+
 }
 
 } 

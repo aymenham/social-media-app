@@ -1,6 +1,8 @@
 const express = require("express");
 const Router = express.Router();
 const {uploadAvatarPictur} = require("../middlewares/picture.middleware")
+const { Protect } = require("../middlewares/auth.middleware");
+
 const {
   getAllPost,
   getPost,
@@ -8,10 +10,12 @@ const {
   deletePost,
   updatePost,
 } = require("../controllers/Post.controller");
-Router.route("/posts").get(getAllPost).post(uploadAvatarPictur("posts"),createPost);
+Router.route("/posts")
+  .get(Protect, getAllPost)
+  .post(Protect, uploadAvatarPictur("posts"), createPost);
 Router.route("/posts/:id")
-  .get(getPost)
-  .delete(deletePost)
-  .put(updatePost);
+  .get(Protect, getPost)
+  .delete(Protect, deletePost)
+  .put(Protect, updatePost);
 
   module.exports = Router

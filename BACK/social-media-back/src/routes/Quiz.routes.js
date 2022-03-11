@@ -8,11 +8,12 @@ const {
  updateQuiz , 
  deleteQuiz
 } = require("../controllers/Quiz.controller");
+const { Protect } = require("../middlewares/auth.middleware");
 
-Router.route("/quizs").get(uploadAvatarPictur("quizs"), getAllQuiz).post(createQuiz);
+Router.route("/quizs").get( Protect , getAllQuiz).post( Protect ,uploadAvatarPictur("quizs") ,createQuiz);
 Router.route("/quizs/:id")
-  .get(getQuiz)
-  .delete(deleteQuiz)
-  .put(updateQuiz);
+  .get(Protect, getQuiz)
+  .delete(Protect, deleteQuiz)
+  .put(Protect, updateQuiz);
 
 module.exports = Router;
