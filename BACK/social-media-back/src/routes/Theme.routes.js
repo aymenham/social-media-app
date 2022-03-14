@@ -6,7 +6,7 @@ const { Protect } = require("../middlewares/auth.middleware");
 
 Router.route("/themes")
   .get(Protect, getAllTheme)
-  .post( createTheme);
+  .post(Protect, uploadAvatarPictur("themes"), createTheme);
 Router.route("/themes/:id")
   .get(Protect, getTheme)
   .delete(Protect, deleteTheme)
