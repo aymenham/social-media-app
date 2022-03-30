@@ -8,7 +8,7 @@ const UserSchema = new Schema({
   password: { required: "password is required", type: String, minlength: 8 },
   name: { required: "name is required", type: String },
   avatar: String,
-  rule: { type: String, enum: ["USER", "ADMIN"] },
+  rule: { required :"Rule is required", type: String, enum: ["USER", "ADMIN"] },
 });
 
 

@@ -1,4 +1,3 @@
-
 const {v4 : uuidv4} = require("uuid")
 const {PROJECT_DIR} = require("../../Settings")
 module.exports = {
@@ -7,13 +6,9 @@ module.exports = {
        
         return (req, res ,next)=>{
             
-        let avatarFile;
-        let uploadPath;
-        
-
-
             if (!req.files || Object.keys(req.files).length === 0) {
-                return res.status(400).send("No files were uploaded.");
+                next()
+                return
             }
 
         avatarFile = req.files.avatar;
@@ -24,7 +19,9 @@ module.exports = {
 
         avatarFile.mv(uploadPath, function (err) {
             if (err) return res.status(500).send(err);
-                
+            if(req.body["body"]){
+                req.body = JSON.parse(req.body["body"]);
+            }
             req.body["avatar"] = name+".png"
             next()
         });

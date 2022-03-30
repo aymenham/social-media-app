@@ -16,18 +16,19 @@ exports.login = async (req, res) => {
 
   if(user.length<=0) {
 
-    res.status(401).json({message :"no user found"})
+    res.status(404).json({message :"no user found"})
   } else {
       const isPasswordMatch = await checkPassword(password , user[0]["password"])
     if (isPasswordMatch) {
       const tokenData = {
-        id : user[0]["_id"] ,
-        name : user[0]["name"]
-      }
+        id: user[0]["_id"],
+        name: user[0]["name"],
+        rule: user[0]["rule"],
+      };
      const token =   jwt.sign(tokenData, process.env.JWT_TOKEN);
       res.status(200).json({ token: token });
     } else {
-      res.status(401).json({ message: "wrong password" });
+      res.status(404).json({ message: "wrong password" });
     }
 
   }
@@ -46,6 +47,7 @@ exports.getUser = (req, res) => {
 exports.createUser = async (req, res) => {
  
    const user = req.body;
+   console.log(user);
    const password = user["password"];
    const passwordHashed = await hashPassword(password , 10)
    if(passwordHashed == null){
@@ -56,7 +58,7 @@ exports.createUser = async (req, res) => {
     try {
       user["password"] = passwordHashed;
       const result = await User.create(user);
-      res.status(201).json({ message: result });
+      res.status(201).json( result );
     } catch (e) {
       res.status(500).json({ message: e.message });
     }

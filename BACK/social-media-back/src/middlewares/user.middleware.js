@@ -3,6 +3,7 @@ const Relation = require("../models/Relation.model")
 const {headers} = require("../utils/Constants")
 module.exports = {
   checkUserExist: async (req, res, next) => {
+    req.body = JSON.parse(req.body["body"]);
     const userInput = req.body;
     const emailInput = userInput["email"];
     const user = await User.find({ email: emailInput });
