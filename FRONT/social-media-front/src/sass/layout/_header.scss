@@ -1,0 +1,24 @@
+.header-container{
+    max-width: 100%;
+    height: calc(100vh - 100px);
+    background: $mainWhite;
+  
+        .header-background{
+            min-width: 100%;
+            min-height: 100%; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+                   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../../../public/header-background.jpg") center/cover no-repeat fixed;
+
+            h1{
+                color: $mainWhite;
+            }
+          
+            
+        }
+  }
+
+

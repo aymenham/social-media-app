@@ -1,0 +1,21 @@
+@mixin display-flex ($justifay-centent , $align-items)  {
+    display: flex;
+    justify-content: $justifay-centent;
+    align-items: $align-items;
+}
+
+
+
+@mixin display-flex-justifay ($justify-content) {
+    display: flex;
+    justify-content: $justify-content;
+ 
+}
+
+
+@mixin display-flex-align ($align-items) {
+    display: flex;
+    align-items: $align-items;
+ 
+}
+

@@ -1,1 +1,33 @@
-$list_color : green; 
+// colors 
+$mainWhite : #FFFFFF;
+$mainBlack : #000000;
+$secondBlue : #0A1C2E ;
+$mainPurple : #A64AC9;
+$mainYellow : #FCCD04;
+$secondRed : #FA3C66;
+$mainBlue : #006DD0;
+$errorColor : #cc0000; 
+$sucessColor : #5cb85c;
+$mainGrey :#A5ADC6;
+
+
+
+// transition 
+$transition03s: all 0.5s ease-in;
+
+//spacing
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+// border radius 
+$main_border_radius : 5px ;
+$button-radius : 15px;
+
+// fonts 
+$big_title_font :'Fredoka', sans-serif; 
+$para-font : 'Hubballi', cursive;
+$button-font :'Merriweather', serif;
+
+// media-queries : 
+$big-screen :600px;

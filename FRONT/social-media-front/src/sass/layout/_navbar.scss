@@ -1,0 +1,49 @@
+.navbar-container{
+    background: $mainWhite;
+    padding: 0 1.3rem;
+    width: 100%;
+    transition: $transition03s;
+    
+     .show-list {
+     background: $mainPurple;
+     height: 100vh;
+     width: 100%;
+     transition: $transition03s;
+     text-align: center;
+     li{
+         display: block;
+         margin: 2rem 0;
+         transition: $transition03s;
+     } 
+
+     li a {    
+         
+         color : $mainWhite;
+         margin: 0 1rem;
+         
+     }
+    } 
+
+    .hide-list {
+        height: 0;
+        overflow: hidden;
+        transition: $transition03s;
+    }
+    
+}
+
+.main-navbar {
+
+    @include display-flex(space-between , baseline);
+  
+    .navbar-icon {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        
+    } 
+
+   
+
+
+}

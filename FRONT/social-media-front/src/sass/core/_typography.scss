@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Hubballi&family=Merriweather:wght@700&display=swap');
+.big-title {
+
+    text-align: center;
+    font-family: $big_title_font;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+// section-title
+.medium-title {
+      font-size: 1.5rem;
+        color: $mainBlue;
+        font-family: $big_title_font;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+}
+

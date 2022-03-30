@@ -1,0 +1,22 @@
+.navigation-container{
+   
+    height: 100vh;
+    background: $mainWhite;
+   
+    border-radius: $main_border_radius;
+    width: 20vw; 
+ 
+}
+
+   .navigation-item {
+       display: flex;
+       gap: 20px;
+       align-items: center;
+       color: $mainGrey;
+       padding: 1.5rem 0.5rem;
+    font-size: 1.8rem;
+     font-family: $para-font;
+     text-transform: uppercase;
+     font-weight: bold;
+    
+    }

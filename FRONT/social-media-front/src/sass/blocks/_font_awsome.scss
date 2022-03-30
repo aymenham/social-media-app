@@ -1,0 +1,11 @@
+.font-admin{
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    &.delete-font{
+        color: $errorColor;
+    }
+    &.update-font{
+        color: $mainPurple;
+    }
+}

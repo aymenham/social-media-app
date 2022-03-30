@@ -1,0 +1,33 @@
+.main-btn{
+width: 150px;
+height: 50px;
+padding: 1rem;
+background: $mainPurple;
+border-radius: $main_border_radius;
+color: $mainWhite;
+text-transform: uppercase;
+font-weight: bold;
+font-family: $button-font;
+font-size: 1rem;
+transition: $transition03s;
+cursor: pointer;
+&:hover{
+    background: $mainYellow;
+    color: $mainBlack;
+}
+}
+
+.submit-button {
+    width: 100px;
+    height: 40px;
+    display: block;
+    background: $secondRed;
+    color: $mainWhite;
+    border-radius: $button-radius;
+    font-family: $button-font;
+    font-size: 1rem;
+    cursor: pointer;
+    &.inline-submit{
+        display: inline;
+    }
+}

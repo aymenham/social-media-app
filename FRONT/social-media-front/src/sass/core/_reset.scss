@@ -1,3 +1,39 @@
-li{
-    color:  $list_color;
+
+html body  {
+  box-sizing: border-box;
+  margin: 0;
+    padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+p{
+  font-family: $para-font;
+}
+
+button {
+  border: none;
+  outline: none;
+  font-family: $button-font;
+  cursor: pointer;
+}
+
+select:focus{
+  outline: none;
 }

@@ -1,0 +1,54 @@
+
+
+
+
+
+
+
+.table {
+	width: calc(100vw - 250px);
+	padding: 1rem;
+	margin: 0 1rem;
+}
+
+.table-header {
+	display:flex;
+	background: $mainWhite;
+	
+	padding:($half-spacing-unit * 1.5) 0;
+}
+
+.table-row {
+	display:flex;
+	height: 180px;
+	padding:($half-spacing-unit * 1.5) 0;
+	font-size: 1.5rem;
+	font-family: $para-font;
+	border-bottom: 2px solid $mainGrey;
+	&:nth-of-type(odd) {
+		background:$mainWhite
+	}
+}
+
+.table-data, .header__item {
+	flex: 1 1 33%;
+	text-align:center;
+}
+
+.header__item {
+	text-transform:uppercase;
+}
+
+
+
+
+.avatar-admin{
+	width: 80%;
+	height: 80%;
+	border-radius: 50%;
+}
+
+.avatar-admin-container{
+	width: 100%;
+	height: 100%;
+}

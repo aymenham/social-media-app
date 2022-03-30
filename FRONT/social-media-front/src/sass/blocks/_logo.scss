@@ -1,0 +1,17 @@
+.logo{
+    @include display-flex (space-around , center);
+   height: 80px;
+   width: 80px;
+   color: $mainBlack;
+    p{
+        font-size: 1.5rem;
+    }
+    svg {
+        font-size: 1.5rem;
+    }
+}
+
+.logo-white {
+
+    color: $mainWhite;
+}

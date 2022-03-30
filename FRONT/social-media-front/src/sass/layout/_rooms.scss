@@ -1,0 +1,58 @@
+.room-container{
+
+  
+
+    min-width: 100%;
+    min-height: 100%;
+    background: $mainWhite;
+    h1{
+        color: $mainPurple;
+    }
+}
+
+.room-item {
+    width: 100%;
+    
+    padding: 1rem;
+    margin: 0.5rem 0.3rem;
+    text-align: center;
+    border-radius: $main_border_radius;
+   
+      &:hover {
+
+        h4{
+            letter-spacing: 0.7rem;
+        }
+
+        svg{
+            transform: translateY(-20px);
+        }
+        
+    }
+    svg{
+       font-size: 10rem;
+       color: $mainPurple;
+        transition: $transition03s;
+    }
+
+    h4{
+      
+         transition: $transition03s;
+    }
+
+    p{
+        color: $secondBlue;
+        font-size: 1.5rem;
+        font-family: $para-font;
+
+    }
+}
+
+// media screen 
+@media screen and (min-width: $big-screen) {
+  .room-item-container {
+    display: flex;
+    padding: 1rem;
+    
+  }
+}

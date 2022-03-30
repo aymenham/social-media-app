@@ -1,0 +1,79 @@
+.admin-container{
+   display: flex;
+  min-width: 100%;
+
+  gap: 1.5rem;
+
+}
+/*room section*/
+.add-room{
+
+
+  p{
+     margin: 1rem auto;
+  }
+  text-align: center;
+  input {
+    margin: 1rem auto;
+  } 
+  button {
+    margin: 1rem auto;
+  }
+}
+
+/* end of room section*/
+
+/*start section quizs*/
+.main-screen-quiz{
+
+  input {
+    margin: 1rem auto;
+  }
+   select {
+    margin: 1rem auto;
+  }
+
+
+
+
+}
+.main-add-quiz{
+ .action-quiz-button{
+   width: 400px;
+   margin: 1rem auto;
+   display: flex;
+   justify-content: space-between;
+ }
+}
+
+.questions-screen{
+  @include display-flex (space-between , center);
+  svg{
+    font-size: 4rem;
+    cursor: pointer;
+    color: $mainBlue;
+  }
+  .inputs-answer-container{
+      flex-grow: 3;
+  }
+  input {
+    margin: 1rem auto;
+    
+  } 
+   select {
+    margin: 1rem auto;
+  }
+}
+
+.finish-quiz {
+
+  width: 100%;
+  color: $sucessColor;
+  padding: 1rem;
+  font-size: 3rem;
+  text-align: center;
+
+}
+
+/* finish quiz*/
+

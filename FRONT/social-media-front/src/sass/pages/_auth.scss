@@ -1,0 +1,76 @@
+.auth-choice{
+
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding: 1rem;
+    font-family: $para-font;
+    font-size: 1.5rem;
+       &:hover{
+          .choice-sep{
+                transform: rotate(90deg);
+          }
+    }
+
+    .choice {
+             width: 150px;
+              color: $mainWhite;
+              text-align: center;
+              padding: 1rem;
+              border-radius: $main_border_radius;
+              cursor: pointer;
+              letter-spacing: 0.2rem;
+    }
+
+    .login-choice{
+       
+            
+            background: $mainPurple;
+    }
+
+    .choice-sep {
+        height: 50px;
+        width: 5px;
+        background: $secondRed;
+        transform: rotate(30deg);
+        transition: $transition03s;
+        
+     
+        
+    }
+    .register-choice{
+       
+            background: $mainBlue;
+    }
+
+    
+}
+
+.login-container {
+        p{
+            margin: 0 auto;
+        }
+    div {
+        input {
+            margin: 1rem auto;
+        }
+    }
+
+    button {
+        margin: 0 auto;
+    }
+    
+    }
+
+    .register-container{
+        p{
+            margin: 0 auto;
+        }
+        input {
+            margin: 1rem auto;
+        }
+        button{
+            
+            margin: 1rem auto;
+        }
+    }

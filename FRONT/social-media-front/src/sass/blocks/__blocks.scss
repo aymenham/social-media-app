@@ -1,0 +1,18 @@
+@import "./logo";
+@import "./navigation";
+@import './_admin_table';
+@import './font_awsome';
+.error-message {
+    display: none;
+    background: $errorColor;
+    color: $mainWhite;
+    font-family: $para-font;
+    padding: 1rem;
+    border-radius: $button-radius;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 50%;
+    &.sucess-message{
+        background: $sucessColor;
+    }
+}
