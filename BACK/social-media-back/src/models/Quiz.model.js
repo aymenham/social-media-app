@@ -14,7 +14,7 @@ const Player = {
 };
 
 const QuizSchema = new Schema({
-  roomID: { required :"theme id is reuired", type: Schema.Types.ObjectId, ref: "Theme" },
+  roomID: { required :"theme id is required", type: Schema.Types.ObjectId, ref: "Theme" },
   title: { required: "title is required", type: String },
   avatar: { required: "avatar is required", type: String },
   questions: { type: [Question], required: "questions are required" },

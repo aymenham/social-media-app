@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const { saveMessageController } = require("../controllers/Chat.controller");
 const  {DB_URL}  = require("../utils/Constants")
 
 const ConnectToDataBase = ()=>{
@@ -20,6 +21,7 @@ const ConnectToDataBase = ()=>{
     });
     connection.on("connected", (err, res) => {
       console.log("database mongoose is connected");
+    
     });
 
     return connection
