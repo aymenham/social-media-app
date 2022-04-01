@@ -19,3 +19,13 @@ export const getRooms = ():Promise<AxiosResponse<any, any>>=>{
       
     return axios.get(roomsUrl , setHeader())
 }
+
+export const getRoom = (roomId: string):Promise<AxiosResponse<any, any>>=>{
+      
+    return axios.get(roomsUrl+"/"+roomId , setHeader())
+}
+
+export const delteRoom = (roomId: string):Promise<AxiosResponse<any, any>>=>{
+      
+    return axios.delete(roomsUrl+"/"+roomId , setHeader())
+}

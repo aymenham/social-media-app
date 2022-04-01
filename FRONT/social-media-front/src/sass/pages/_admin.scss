@@ -5,6 +5,14 @@
   gap: 1.5rem;
 
 }
+
+.admin-user-container {
+
+  input {
+    display: block;
+    margin: 2rem auto;
+  }
+}
 /*room section*/
 .add-room{
 
@@ -19,6 +27,13 @@
   button {
     margin: 1rem auto;
   }
+}
+
+.room-container-search {
+  margin: 3rem 0rem 3rem 3rem;
+  width: 70%;
+ display: flex;
+ justify-content: space-between;
 }
 
 /* end of room section*/
@@ -75,5 +90,11 @@
 
 }
 
+.quiz-container {
+  margin: 3rem 0rem 3rem 3rem;
+  width: 70%;
+ display: flex;
+ justify-content: space-between;
+}
 /* finish quiz*/
 

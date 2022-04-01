@@ -1,31 +1,37 @@
 import React from 'react';
-import {
-  Outlet
-} from "react-router-dom";
 import Navigation from '../../Components/Navigation/Navigation';
-import { faBook, faCode , faQuestion, faUser,faSignOut} from "@fortawesome/free-solid-svg-icons"
- 
-const Admin = ():JSX.Element => {
+import { faBook, faCode , faQuestion, faUser,faSignOut , faGamepad} from "@fortawesome/free-solid-svg-icons"
+import {
+    Outlet
+  } from "react-router-dom";
+const UserPage = () => {
     const NavigationData = [{
-        title :"rooms",
-        to :"rooms",
+        title :"chat",
+        to :"chat",
         icon : faCode
     } , 
-    {
-        title :"users",
-        to :"users",
-        icon : faUser
-    } , 
+   , 
 
       {
         title :"posts",
         to :"posts",
         icon : faBook
     } ,
+  
       {
         title :"quiz",
         to :"quizs",
         icon : faQuestion
+    } ,
+    {
+        title :"game",
+        to :"game",
+        icon : faGamepad
+    } ,
+      {
+        title :"Profile",
+        to :"profil",
+        icon : faUser
     } ,
       {
         title :"out",
@@ -38,9 +44,8 @@ const Admin = ():JSX.Element => {
         <div className='admin-container'>
         <Navigation data={NavigationData} />
         <Outlet />  
-
         </div>
     );
 };
 
-export default Admin;
+export default UserPage;

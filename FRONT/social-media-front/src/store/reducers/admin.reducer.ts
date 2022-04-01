@@ -12,6 +12,8 @@ type Player = {
 }
 
 export interface IQuiz  {
+    _id?: string;
+    roomID : string
     title :string , 
     avatar : File | null ,
     level :string ,
@@ -19,7 +21,7 @@ export interface IQuiz  {
     players : Player [] 
 }
 
-export type ACTION = {type : "change_title" , value:string} |
+export type ACTION = {type : "change_room",value : string} |{type : "change_title" , value:string} |
                     {type : "change_avatar" ,  value:File} |
                     {type : "change_level"   , value:string} |
                     {type : "change_room"   , value:string} |
@@ -34,6 +36,12 @@ export interface STATE extends IQuiz  {
 
 export const  addQuizReducer = (state:STATE , action:ACTION):STATE=>{
         switch(action.type){
+            case "change_room" : 
+            return {
+                ...state , 
+                roomID : action.value
+
+            }
             case "change_title" :
                 return {
                     ...state ,

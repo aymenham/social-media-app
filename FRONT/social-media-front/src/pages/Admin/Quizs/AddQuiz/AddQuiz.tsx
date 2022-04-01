@@ -10,6 +10,7 @@ const AddQuiz = ({isOpenModal , setOpenModal} : ModalOpenProps) :JSX.Element => 
     const [indexScreen , setIndexScreen] = useState<number>(0)    
     const screens :JSX.Element[] = [<MainScreen /> , <QuestionsScreen />]
     const [QuizStat , AddQuizDispatch] = useReducer(addQuizReducer , {
+    roomID:"",
     title :"" , 
     avatar :  null ,
     level :"" ,
@@ -18,6 +19,9 @@ const AddQuiz = ({isOpenModal , setOpenModal} : ModalOpenProps) :JSX.Element => 
     number_question :1
     })
 
+
+    console.log("quiz stat " , QuizStat);
+    
   
     
     return (

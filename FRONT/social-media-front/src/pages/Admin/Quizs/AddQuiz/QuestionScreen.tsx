@@ -4,11 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight , faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { AddQuizContext } from '../../../../store/context/admin.context'
 import {addQuiz} from '../../../../api/Quiz.api'
+import {QuizContext} from '../../../../store/context/admin.context'
+import { IQuiz } from '../../../../store/reducers/admin.reducer'
 
 const QuestionsScreen = ():JSX.Element=>{
     const AddQuestionContextConsummer = useContext(AddQuizContext)
     const {stateAddQuestion , dispatchAddQuestion} = AddQuestionContextConsummer
- 
+    const QuizContextConsumer = useContext(QuizContext)
+    const {quizList , setQuizList} = QuizContextConsumer
+
         // stat ui 
          const [answersInputs , setAnswerInputs] = useState<JSX.Element |JSX.Element[]>(<div> select number of answers </div>)
          const [indexQuestionPage , setIndexQuestionPage] = useState<number>(1)
@@ -16,7 +20,7 @@ const QuestionsScreen = ():JSX.Element=>{
         
          // stat finish screen 
          
-         const [finishScreen , setScreenFinishScreen] = useState<boolean>(true)
+         const [finishScreen , setScreenFinishScreen] = useState<boolean>(false)
 
 
         // stat inputs
@@ -48,7 +52,7 @@ const QuestionsScreen = ():JSX.Element=>{
                      value={answerInputsValues[inputName] ? answerInputsValues[inputName] : ""}
                      onChange={(event)=>setAnswerInputsValues({
                          ...answerInputsValues ,
-                         [inputName] : event.currentTarget.value.trim()
+                         [inputName] : event.currentTarget.value
                      })}
                      />
                     
@@ -86,15 +90,19 @@ const QuestionsScreen = ():JSX.Element=>{
             }
 
             const storeQuiz = async (quiz:any)=>{
-                console.log("inside store quiz" , quiz);
-               let quizObject = {
+              
+               let quizObject : IQuiz = {
+                roomID : quiz["roomID"],   
                 title : quiz["title"] , 
-                avatar :'' ,
+                avatar :null ,
                 level : quiz["level"] ,
                 questions : quiz["questions"],
                 players : quiz['players']
                }
 
+
+            
+               
             
                 
                 
@@ -104,8 +112,10 @@ const QuestionsScreen = ():JSX.Element=>{
                 formData.append("body" , JSON.stringify(quizObject))
                 
                 try {
-                    await addQuiz(formData)
+                    const result = await addQuiz(formData)
+                    const newQuiz:IQuiz = result.data
                     setScreenFinishScreen(true)
+                    setQuizList([...quizList , newQuiz])
                 } catch (error:any) {
                     console.log(error);
                     

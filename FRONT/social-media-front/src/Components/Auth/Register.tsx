@@ -48,7 +48,7 @@ const Register = () => {
                     email : inputs.email,
                     password : inputs.password,
                     avatar :"",
-                    rule:"ADMIN"
+                    rule:"USER"
                 }
               
                 

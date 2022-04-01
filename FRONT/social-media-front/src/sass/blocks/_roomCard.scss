@@ -1,0 +1,106 @@
+.rooms-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem 4rem;
+}
+
+.rooms-container .room-card {
+    position: relative;
+    border-radius: 10px;
+}
+
+.rooms-container .room-card .room-icon {
+
+    transition: 0.7s;
+    z-index: 1;
+}
+
+.room-card {
+    cursor: pointer;
+}
+
+
+.room-icon {
+    width: 100%;
+}
+
+.room-pic{
+    width: 100%;
+    height: 100%;
+}
+
+
+.rooms-container .room-card .room-face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.rooms-container .room-card .room-face.room-face1 {
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.rooms-container .room-card:hover .room-face.room-face1{
+    
+    transform: translateY(0px);
+}
+
+.rooms-container .room-card .room-face.room-face1 .room-content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.rooms-container .room-card:hover .room-face.room-face1 .room-content {
+    opacity: 1;
+}
+
+.rooms-container .room-card .room-face.room-face1 .room-content i{
+    max-width: 100px;
+}
+
+.rooms-container .room-card .room-face.room-face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-100px);
+}
+
+.rooms-container .room-card:hover .room-face.room-face2{
+    transform: translateY(0);
+}
+
+.rooms-container .room-card .room-face.room-face2 .content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+
+.rooms-container .room-card .room-face.room-face2 .room-content h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+} 
+
+.rooms-container a {
+    text-decoration: none;
+    color: #414141;
+}

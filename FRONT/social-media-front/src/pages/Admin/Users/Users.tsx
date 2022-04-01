@@ -4,6 +4,7 @@ import {getAllUser} from '../../../api/User.api'
 import AdminTable from "../../../Components/Admin/AdminTable";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash , faPen } from '@fortawesome/free-solid-svg-icons'
+import SearchInput from "../../../Components/SearchInput/SearchInput";
 
 interface IUser {
     avatar :string ,
@@ -58,7 +59,8 @@ const Users = ():JSX.Element => {
    
     
     return (
-        <div>
+        <div className="admin-user-container">
+            <SearchInput />
             <AdminTable headerStyle={style} headers={headers} >
                 {userData}   
              </AdminTable>

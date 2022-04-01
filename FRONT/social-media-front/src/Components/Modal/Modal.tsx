@@ -35,7 +35,7 @@ const Modal = ({children ,modalTitle , isOpenModal , setOpenModal} : IProps):JSX
   
   <div  className="modal-content">
     <div className="modal-header">
-      <span className="modal-close">&times;</span>
+      <span onClick={()=>setOpenModal(false)} className="modal-close">&times;</span>
       <h2>{modalTitle}</h2>
     </div>
     <div className="modal-body">

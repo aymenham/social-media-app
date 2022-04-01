@@ -1,8 +1,9 @@
-import React , {ChangeEvent, useState} from 'react';
+import React , {ChangeEvent, useContext, useState} from 'react';
 import Modal from '../../../Components/Modal/Modal';
 import {ModalOpenProps} from '../../../Components/Modal/Modal'
 import {addRoom} from '../../../api/Room.api'
 import { AxiosError } from 'axios';
+import {AddUserContext} from '../../../store/context/admin.context'
 interface IAddRoom extends ModalOpenProps {
 
 }
@@ -12,6 +13,7 @@ type Inputs = {
     avatar : File | null 
 }
 const AddRoom = ({isOpenModal , setOpenModal} :IAddRoom) => {
+    const UseContext = useContext(AddUserContext)
     const classOfMessageBlock:string[] = ["error-message"]
     const [sucess , setSucess] = useState<boolean>(false)
     const [message , setMessage] = useState<string | null>(null)
@@ -42,11 +44,12 @@ const AddRoom = ({isOpenModal , setOpenModal} :IAddRoom) => {
             const room = {name : inputs.title.trim() , avatar :""}
             formData.append("body" , JSON.stringify(room) )
             const result = await addRoom(formData)
-            console.log("data");
+            
             
             if(result.data){
                 setSucess(true)
                 setMessage("room added")
+                UseContext.setRoomList([...UseContext.roomList , result.data])
 
             }
         } catch (error:any) {

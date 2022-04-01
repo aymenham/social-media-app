@@ -14,3 +14,13 @@ export const addQuiz = (body:FormData):Promise<AxiosResponse<any, any>>=>{
       
     return axios.post(quizUrl , body , setHeader())
 }
+
+export const getQuizs = ():Promise<AxiosResponse<any, any>>=>{
+      
+    return axios.get(quizUrl ,setHeader())
+}
+
+export const deleteQuiz= (quizID: string):Promise<AxiosResponse<any, any>>=>{
+      
+    return axios.delete(quizUrl+"/"+quizID ,setHeader())
+}

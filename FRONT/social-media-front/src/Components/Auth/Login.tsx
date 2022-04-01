@@ -36,12 +36,15 @@ const Login = () => {
             const decode_jwt = decodeJwt(token)
             const RULE= decode_jwt["rule"]
             storeToken("token" , token)
+            console.log("login" , RULE);
+            
             if(RULE == "USER") {
-                    console.log("user");
+                    
+                navigate("/rooms")
                     
             }
             else if (RULE == "ADMIN"){
-                    navigate("/admin")
+                    navigate("/admin/rooms")
                     
             }
             
