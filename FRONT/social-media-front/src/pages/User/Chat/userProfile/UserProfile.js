@@ -5,24 +5,25 @@ export default class UserProfile extends Component {
   toggleInfo = (e) => {
     e.target.parentNode.classList.toggle("open");
   };
+
+  
+
+  constructor(props){
+    super(props)
+    this.USER_URL_PICTUR = "http://localhost:7000/app/storage/pictures/users/"
+  
+  }
   render() {
     return (
       <div className="main__userprofile">
         <div className="profile__card user__profile__image">
           <div className="profile__image">
-            <img src="https://www.pngkit.com/png/detail/372-3729814_profile-icon-my-profile-icon-png.png" />
+            <img src={this.USER_URL_PICTUR+this.props.user["avatar"]} />
           </div>
-          <h4>user profile</h4>
+          <h3 className="user-profile-name">{this.props.user["name"]}</h3>
         </div>
         <div className="profile__card">
-          <div className="card__header" onClick={this.toggleInfo}>
-            <h4>Information</h4>
-            <i className="fa fa-angle-down"></i>
-          </div>
-          <div className="card__content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            ultrices urna a imperdiet egestas. Donec in magna quis ligula
-          </div>
+            <button> consulter </button>
         </div>
       </div>
     );

@@ -6,8 +6,11 @@ export default class Avatar extends Component {
   }
   render() {
     return (
-      <div className="avatar">
-        <div className="avatar-img">
+      <div  className="avatar">
+        <div style={{cursor :"pointer"}} onClick={()=>{
+
+this.props.setSelectedUSer(this.props.userData)
+}} className="avatar-img">
           <img src={this.props.image} alt="#" />
         </div>
         

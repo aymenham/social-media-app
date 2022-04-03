@@ -1,7 +1,7 @@
 const {saveMessageController} = require("../controllers/Chat.controller")
 module.exports = (io, socket) => {
   const joinRoom = ({roomID , userName}) => {
-    console.log(roomID);
+   
     socket.join(roomID);
     socket.broadcast
       .to(roomID)
@@ -10,8 +10,9 @@ module.exports = (io, socket) => {
 
   const saveMessage = async ({roomID , user , message}) => {
     //saving in database
+    console.log("save message" , message);
     try {
-      saveMessageController(roomID, user, message);
+      await saveMessageController(roomID, user, message);
       io.to(roomID).emit("message", {
         user: user,
         message: message,

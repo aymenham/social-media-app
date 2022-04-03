@@ -23,6 +23,7 @@ exports.login = async (req, res) => {
       const tokenData = {
         id: user[0]["_id"],
         name: user[0]["name"],
+        avatar : user[0]["avatar"],
         rule: user[0]["rule"],
       };
      const token =   jwt.sign(tokenData, process.env.JWT_TOKEN);

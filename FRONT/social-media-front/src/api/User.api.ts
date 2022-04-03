@@ -27,3 +27,8 @@ export const getAllUser = ():Promise<AxiosResponse<any, any>>=>{
       
     return axios.get(userUrl , setHeader())
 }
+
+export const getUser = (userID : string):Promise<AxiosResponse<any, any>>=>{
+      
+    return axios.get(userUrl+"/"+userID , setHeader())
+}

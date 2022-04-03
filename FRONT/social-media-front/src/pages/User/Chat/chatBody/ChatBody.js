@@ -4,34 +4,38 @@ import ChatContent from "../chatContent/ChatContent";
 import UserProfile from "../userProfile/UserProfile";
 import {MessageChatContext} from '../../../../store/context/user.admin'
 import { getAllMessagesRoom } from "../../../../api/Chat.api";
+import { useParams } from "react-router-dom";
 const ChatBody = ()=> {
 
 
   const [chatMessges , setChatMessages] = useState([])
-
+  const [selectedUser , setSelectedUSer] = useState(null)
+  const params = useParams()
 
   const getMessageRoomAsync = async ()=>{
 
     try {
-     // await  getAllMessagesRoom()
+    const result  =  await  getAllMessagesRoom(params["id"])
+    setChatMessages(result.data)
     } catch (error) {
       
     }
 
   }
 
-  useEffect(()=>{
-
+  useEffect(()=>{    
     getMessageRoomAsync()
   } , [])
 
 
+
+  console.log("user selcted" , selectedUser);
     return (
       <div className="main__chatbody">
-      <MessageChatContext.Provider value={{chatMessges : chatMessges , setChatMessages : setChatMessages}}>
-        <ChatContent />
-        <UserProfile />
-        </MessageChatContext.Provider>
+     
+        <ChatContent roomID={params["id"]} chatData ={chatMessges} setSelectedUSer={setSelectedUSer}  />
+       {selectedUser !=null ?  <UserProfile user={selectedUser} /> : null} 
+      
       </div>
     );
   

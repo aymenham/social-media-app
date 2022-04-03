@@ -4,6 +4,7 @@ import Avatar from "../chatList/Avatar";
 export default class ChatItem extends Component {
   constructor(props) {
     super(props);
+    this.USER_URL_PICTUR = "http://localhost:7000/app/storage/pictures/users/"
   }
   render() {
     return (
@@ -15,10 +16,9 @@ export default class ChatItem extends Component {
           <div className="chat__msg">{this.props.msg}</div>
           <div className="chat__meta">
             <span>19 mins</span>
-            <span>Vu à 15h45</span>
           </div>
         </div>
-        <Avatar isOnline="active" image={this.props.image} />
+        <Avatar userData={this.props.userData} setSelectedUSer={this.props.setSelectedUSer} isOnline="active" image={this.USER_URL_PICTUR+this.props.image} />
       </div>
     );
   }
