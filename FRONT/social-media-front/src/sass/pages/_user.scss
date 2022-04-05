@@ -1,0 +1,101 @@
+
+
+/* user post start*/
+.add-post-container {
+
+    min-width: 1400px;
+    input {
+       margin: 1rem 0;
+        border-color:  $mainGrey;
+        color: black;
+            }
+}
+
+.tags-action {
+   
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.tags-container{
+
+    display: flex;
+    gap: 1rem;
+    
+    p{
+        
+        background: $mainBlue;
+        color: $mainWhite;
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 1rem;
+        border-radius: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+.add-post-btn {
+    display: block;
+    padding: 1rem;
+    font-family: $button-font;
+    text-transform: uppercase;
+    background: $mainPurple;
+    color: $mainWhite;
+    margin: 1rem ;
+    border-radius: 10px;
+}
+
+.posts-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    select {
+
+        padding: 1rem;
+        border-radius: 5px;
+        font-family: $para-font;
+        font-size: 1.5rem;
+        border-color: $mainGrey;
+        color: $mainGrey;
+        option {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.blog-detail {
+
+    min-width: 1200px;
+}
+
+.blog-author-container {
+
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    p {
+        font-size: 1.2rem;
+        color: $mainGrey;
+    }
+}
+
+.blog-info-container{
+    
+    
+    .post-avatar-container{
+        width: 600px;
+        margin: 0 auto;
+       
+        img {
+            display: block;
+            text-align: center;
+
+            width: 100%;
+        }
+    }
+}
+
+/* user post finish*/

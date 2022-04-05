@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from '../../Components/Navigation/Navigation';
-import { faBook, faCode , faQuestion, faUser,faSignOut , faGamepad} from "@fortawesome/free-solid-svg-icons"
+import { faBook, faCode , faQuestion, faUser,faSignOut , faGamepad , faAdd} from "@fortawesome/free-solid-svg-icons"
 import {
     Outlet
   } from "react-router-dom";
@@ -11,7 +11,11 @@ const UserPage = () => {
         icon : faCode
     } , 
    , 
-
+   {
+    title :"add post",
+    to :"add_post",
+    icon : faAdd
+  } ,
       {
         title :"posts",
         to :"posts",

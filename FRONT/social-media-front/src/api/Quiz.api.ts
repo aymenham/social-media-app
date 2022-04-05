@@ -24,3 +24,13 @@ export const deleteQuiz= (quizID: string):Promise<AxiosResponse<any, any>>=>{
       
     return axios.delete(quizUrl+"/"+quizID ,setHeader())
 }
+
+export const getQuizsByRoom = (roomID : string):Promise<AxiosResponse<any, any>>=>{
+      
+    return axios.get(quizUrl+"/rooms/"+roomID ,setHeader())
+}
+
+export const getQuiz = (quizID:string):Promise<AxiosResponse<any, any>>=>{
+      
+    return axios.get(quizUrl+"/"+quizID ,setHeader())
+}
