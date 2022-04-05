@@ -1,3 +1,4 @@
+const { json } = require("express/lib/response");
 const Post = require("../models/Post.model");
 const {getAllDataOfModal , getModal , createModal , updateModal , deleteModal} = require("../utils/CRUD")
 exports.getAllPost = (req, res) => {
@@ -19,3 +20,15 @@ exports.updatePost = (req, res) => {
 exports.deletePost = (req, res) => {
  deleteModal(Post, req, res);
 };
+
+exports.getPostsOfRoom = async  (req, res) => {
+
+  const id = req.params.id
+  try {
+    const result = await Post.find({theme : id})
+    res.status(200).json(result)
+  } catch (error) {
+    console.log(error);
+  }
+
+ };

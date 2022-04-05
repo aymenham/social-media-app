@@ -21,3 +21,20 @@ exports.updateQuiz = (req, res) => {
 exports.deleteQuiz = (req, res) => {
  deleteModal(Quiz , req ,res)
 };
+
+exports.getQuizByRoom = async (req, res) => {
+
+  const roomID = req.params.id
+ 
+  try { 
+
+     const result = await Quiz.find({roomID : roomID})
+
+     res.status(200).json(result)
+
+    
+  } catch (error) {
+    console.log("error" , error);
+  }
+
+ };

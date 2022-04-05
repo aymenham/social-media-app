@@ -6,7 +6,8 @@ const {
  getQuiz ,
  createQuiz ,
  updateQuiz , 
- deleteQuiz
+ deleteQuiz ,
+ getQuizByRoom
 } = require("../controllers/Quiz.controller");
 const { Protect } = require("../middlewares/auth.middleware");
 
@@ -15,5 +16,8 @@ Router.route("/quizs/:id")
   .get(Protect, getQuiz)
   .delete(Protect, deleteQuiz)
   .put(Protect, updateQuiz);
+
+  Router.route("/quizs/rooms/:id").get(getQuizByRoom)
+
 
 module.exports = Router;
