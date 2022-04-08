@@ -17,6 +17,7 @@ const quizRoutes = require("./src/routes/Quiz.routes")
 const postRoutes = require("./src/routes/Post.routes")
 const relationRoutes = require("./src/routes/Relation.routes")
 const chatRoutes = require("./src/routes/Chat.routes")
+const XORoutes = require("./src/routes/XO.routes")
 // import config 
 const {ioCors} = require("./src/config/cors")
 // import sockets 
@@ -40,6 +41,8 @@ app.use(API_URL, quizRoutes);
 app.use(API_URL, postRoutes);
 app.use(API_URL, relationRoutes);
 app.use(API_URL, chatRoutes);
+app.use(API_URL, XORoutes);
+
 
 // for pictures
 app.use(STORAGE_URL + "/users", express.static("pictures/users")); 

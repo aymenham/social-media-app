@@ -4,8 +4,16 @@ const {headers} = require("../utils/Constants")
 
 
 
-exports.getRelation = (req, res) => {
-  res.status(200).json({ message: "get relation" + req.params.id });
+exports.getRelation = async  (req, res) => {
+  const userID = req.params.id
+  try {
+    const result =  await Relation.findOne({USER_ID : userID})
+    console.log(result);
+    res.status(200).json(result)
+  } catch (error) {
+    res.status(500).json({message : error.message})
+  }
+
 };
 
 exports.createRelation = async  (req, res) => {

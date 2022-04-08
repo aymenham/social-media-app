@@ -32,3 +32,14 @@ exports.getPostsOfRoom = async  (req, res) => {
   }
 
  };
+ exports.getPostsOfUser = async  (req, res) => {
+
+  const id = req.params.id
+  try {
+    const result = await Post.find({user : id})
+    res.status(200).json(result)
+  } catch (error) {
+    console.log(error);
+  }
+
+ };

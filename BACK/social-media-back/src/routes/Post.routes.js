@@ -9,7 +9,8 @@ const {
   createPost,
   deletePost,
   updatePost,
-  getPostsOfRoom
+  getPostsOfRoom , 
+  getPostsOfUser
 } = require("../controllers/Post.controller");
 Router.route("/posts")
   .get(Protect, getAllPost)
@@ -19,6 +20,7 @@ Router.route("/posts/:id")
   .delete(Protect, deletePost)
   .put(Protect, updatePost);
 
-  Router.route("/posts/rooms/:id")
-  .get(  getPostsOfRoom)
+  Router.route("/posts/rooms/:id").get(  getPostsOfRoom)
+
+  Router.route("/posts/users/:id").get( getPostsOfUser)
   module.exports = Router
