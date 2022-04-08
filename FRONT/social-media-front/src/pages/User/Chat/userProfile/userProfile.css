@@ -62,6 +62,16 @@
 .profile__card .card__header i {
   font-size: 20px;
 }
+.profile__card a {
+  
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: #FA3C66;
+  font-family: cursive;
+  color: #FFF; 
+
+}
 .card__content {
   border-top: 1px solid #ebe7fb;
   overflow: auto;

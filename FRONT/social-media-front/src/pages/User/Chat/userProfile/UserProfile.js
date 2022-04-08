@@ -1,31 +1,26 @@
 import React, { Component } from "react";
+import { Link, useLocation, useMatch } from "react-router-dom";
 import "./userProfile.css";
 
-export default class UserProfile extends Component {
-  toggleInfo = (e) => {
-    e.target.parentNode.classList.toggle("open");
-  };
+const UserProfile = (props) => {
+  const USER_URL_PICTUR = "http://localhost:7000/app/storage/pictures/users/"
+  const pathname = useLocation().pathname
+   const  parentPath = pathname.substring(0, pathname.lastIndexOf("/"));
 
   
-
-  constructor(props){
-    super(props)
-    this.USER_URL_PICTUR = "http://localhost:7000/app/storage/pictures/users/"
-  
-  }
-  render() {
-    return (
-      <div className="main__userprofile">
-        <div className="profile__card user__profile__image">
-          <div className="profile__image">
-            <img src={this.USER_URL_PICTUR+this.props.user["avatar"]} />
-          </div>
-          <h3 className="user-profile-name">{this.props.user["name"]}</h3>
+  return (
+    <div className="main__userprofile">
+      <div className="profile__card user__profile__image">
+        <div className="profile__image">
+          <img src={USER_URL_PICTUR+props.user["avatar"]} />
         </div>
-        <div className="profile__card">
-            <button> consulter </button>
-        </div>
+        <h3 className="user-profile-name">{props.user["name"]}</h3>
       </div>
-    );
-  }
-}
+      <div className="profile__card">
+          <Link   to={parentPath+"/"+"profil/"+props.user["_id"]}>consulter profile</Link>
+      </div>
+    </div>
+  );
+};
+
+export default UserProfile;

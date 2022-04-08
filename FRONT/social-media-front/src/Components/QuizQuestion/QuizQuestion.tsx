@@ -22,7 +22,7 @@ const QuizQuestion = ({question , setAnswerChosed , answerChosed , cuurent} : Pr
                 if(answerChosed == index+1) {
                      style = {backgroundColor :"#FA3C66"}
                 }   
-               return <p style={style} onClick={()=>setAnswerChosed(index+1)}> {answer}</p>
+               return <p className='answer-item' style={style} onClick={()=>setAnswerChosed(index+1)}> {answer}</p>
            })}
          
         </div>

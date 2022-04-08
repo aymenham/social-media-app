@@ -19,6 +19,10 @@ import AddPost from './pages/User/Posts/AddPost';
 import DetailPost from './pages/User/Posts/DetailPost';
 import QuizsPage from './pages/User/Quiz/QuizsPage';
 import QuizGame from './pages/User/Quiz/QuizGame';
+import UserProfile from './Components/UserProfile/UserProfileDetails';
+import UserProfileDetails from './Components/UserProfile/UserProfileDetails';
+import GamePage from './pages/User/game/GamePage';
+import XO from './pages/User/game/XO';
 function App() {
 
 
@@ -49,8 +53,11 @@ function App() {
       
       <Route  path="quizs" element={<QuizsPage />} />
       <Route  path="quizs/:quizID" element={<QuizGame />} />
-      <Route  path="game" element={<Test1 />} />
-      <Route  path="profil" element={<Test1 />} />
+      <Route  path="game" element={<GamePage />} />
+      <Route  path="game/:id" element={<XO />} />
+      <Route  path="profil/:profileID" element={<UserProfileDetails />} />
+      <Route  path="profil" element={<UserProfileDetails />} />
+     
       </Route>
 
 

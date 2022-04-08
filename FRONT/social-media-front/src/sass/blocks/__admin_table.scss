@@ -42,13 +42,14 @@
 
 
 
-.avatar-admin{
-	width: 80%;
-	height: 80%;
-	border-radius: 50%;
-}
+
 
 .avatar-admin-container{
-	width: 100%;
-	height: 100%;
+	max-width: 200px;
+	
+	.avatar-admin{
+		width: 200px;
+		height: 150px;
+		border-radius: 50%;
+	}
 }

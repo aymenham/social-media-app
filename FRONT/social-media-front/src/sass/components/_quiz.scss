@@ -122,18 +122,18 @@
 	h2 {
 		font-size: 3rem;
 	}
-	p{
-		font-size: 2rem;
-		color: $mainWhite;
-		padding: 1rem;
-		border-radius: 20px;
-		background-color: $mainYellow;
-		font-weight: bold;
-		transition: all 0.3s ease-in-out;
-		cursor: pointer;
-	}
-}
 
+}
+.answer-item{
+	font-size: 2rem;
+	color: $mainWhite;
+	padding: 1rem;
+	border-radius: 20px;
+	background-color: $mainYellow;
+	font-weight: bold;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
 
 .quiz-game {
 	
@@ -160,3 +160,20 @@
 }
 
 /* finish quiz question */
+
+/*  quiz result start */
+
+
+.quiz-result-container {
+	text-align: center;
+	p{
+		font-size: 2rem ;
+		span {
+			color: $mainBlue;
+			font-weight: bold;
+			font-size: 3rem;
+		}
+	}
+}
+
+/* quiz result finish  */

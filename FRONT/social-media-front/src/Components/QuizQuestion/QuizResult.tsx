@@ -40,18 +40,23 @@ const QuizResult = ({isOpenModal , setOpenModal , answers , questions} : Props) 
     return (
             <Modal modalTitle={"quiz result"} isOpenModal={isOpenModal} setOpenModal={setOpenModal}>
                  
-                   <div>
-                   <div> you got {score} correct answer from {numberOfQuesion} </div>
-                   <div>  {Math.floor( score / numberOfQuesion * 100 )} </div>
+                   <div className='quiz-result-container'>
+                   <p> you got <span> {score}</span> correct answer from <span> {numberOfQuesion}</span> </p>
+                   <p>  <span> {Math.floor( score / numberOfQuesion * 100 )}%</span> </p>
                    {questions.map((question :any , index:number) =>{
 
                         return (
                             <div>
-                                <div style={{color : question.correctAnswer == answers[index] ? "green" : "red" }}> {question.question} </div>
+                                <p className='big-title' style={{color : question.correctAnswer == answers[index] ? "green" : "red" }}> {question.question} </p>
                                 <ul>
-                                    {question.answers.map((answer :any)=>{
+                                    {question.answers.map((answer :any , index2 : number)=>{
 
-                                        return <li> {answer} </li>
+                                        let style = null
+
+                                        if(question.correctAnswer == index2+1) style = {background : "green"}
+                                        else if(index2+1 == answers[index]) style = {background : "red"}
+
+                                        return <li> <p style={style} className='answer-item'> {answer} </p> </li>
                                     })}
                                 </ul>
                             </div>

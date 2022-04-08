@@ -4,6 +4,7 @@ import { faBook, faCode , faQuestion, faUser,faSignOut , faGamepad , faAdd} from
 import {
     Outlet
   } from "react-router-dom";
+import Footer from '../HomePage/Footer';
 const UserPage = () => {
     const NavigationData = [{
         title :"chat",
@@ -45,10 +46,13 @@ const UserPage = () => {
 
 ]
     return (
+       <>
         <div className='admin-container'>
         <Navigation data={NavigationData} />
         <Outlet />  
+        
         </div>
+       </>
     );
 };
 

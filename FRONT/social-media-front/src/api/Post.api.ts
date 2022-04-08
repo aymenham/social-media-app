@@ -26,3 +26,8 @@ export const savePost = (body:FormData):Promise<AxiosResponse<any, any>>=>{
       
     return axios.post(postUrl , body , setHeader())
 }
+
+export const getPostsOfUser = (UserID : string):Promise<AxiosResponse<any, any>>=>{
+      
+    return axios.get(postUrl+"/users/"+UserID , setHeader())
+}

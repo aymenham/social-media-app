@@ -4,6 +4,7 @@ import { getPost } from '../../../api/Post.api';
 import { getUser } from '../../../api/User.api';
 import ReactHtmlParser  from 'html-react-parser'
 import { paste } from '@testing-library/user-event/dist/paste';
+import { getRelation } from '../../../api/Relation.api';
 const DetailPost = () => {
 
     const params = useParams()
@@ -31,8 +32,10 @@ const DetailPost = () => {
         }
     }
 
-    useEffect(()=>{
+ 
 
+    useEffect(()=>{
+     
         getPostEffect()
     } , [])
    
